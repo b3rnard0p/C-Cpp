@@ -27,7 +27,7 @@ void cadastrar(Criptomoeda* &vetor, int &totalCriptomoedas, int &capacidade) {
     cin >> vetor[totalCriptomoedas].sigla;
     vetor[totalCriptomoedas].sigla = converterMaiusculas(vetor[totalCriptomoedas].sigla);
 
-    cout << "Valor em dólar: ";
+    cout << "Valor em dolar: ";
     cin >> vetor[totalCriptomoedas].valorDolar;
 
     totalCriptomoedas++;
@@ -49,7 +49,7 @@ void atualizar(Criptomoeda* vetor, int totalCriptomoedas) {
 
     for (int i = 0; i < totalCriptomoedas; i++) {
         if (vetor[i].sigla == sigla) {
-            cout << "Novo valor em dólar: ";
+            cout << "Novo valor em dolar: ";
             cin >> vetor[i].valorDolar;
             cout << "Valor atualizado com sucesso." << endl;
             return;
@@ -94,7 +94,7 @@ void listar(Criptomoeda* vetor, int totalCriptomoedas) {
 
     cout << "LISTA DE CRIPTOMOEDAS" << endl;
     for (int i = 0; i < totalCriptomoedas; i++) {
-        cout << "Nome: " << vetor[i].nome << ", Sigla: " << vetor[i].sigla << ", Valor em dólar: " << vetor[i].valorDolar << endl;
+        cout << "Nome: " << vetor[i].nome << ", Sigla: " << vetor[i].sigla << ", Valor em dolar: " << "U$" << vetor[i].valorDolar << endl;
     }
 }
 
