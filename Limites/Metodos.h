@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
+
 using namespace std;
 
 // Função que calcula o limite de uma função afim
