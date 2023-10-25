@@ -11,11 +11,11 @@ int main() {
     char operador1, operador2;
     char raizOnde = 'n';
 
-    cout << "Escolha o tipo de função:" << endl;
-    cout << "1 - Função Afim (Ax + B)" << endl;
-    cout << "2 - Função Quadrática (Ax^2 + Bx + C)" << endl;
-    cout << "3 - Função Exponencial (Ae^(Ax))" << endl;
-    cout << "Opção: ";
+    cout << "Escolha o tipo de funcao:" << endl;
+    cout << "1 - Funcao Afim (Ax + B)" << endl;
+    cout << "2 - Funcao Quadratica (Ax^2 + Bx + C)" << endl;
+    cout << "3 - Funcao Exponencial (Ae^(Ax))" << endl;
+    cout << "Opcao: ";
     cin >> escolha;
 
     if (escolha == 1) {
@@ -51,7 +51,7 @@ int main() {
         resultado = calcularLimiteQuadratica(a, b, c, x, operador1, operador2, raizOnde);
 
         if (std::isnan(resultado) || std::isinf(resultado)) {
-            cout << "O limite resulta em uma indeterminação. Tentando resolver usando a fórmula de Bhaskara..." << endl;
+            cout << "O limite resulta em uma indeterminacao. Tentando resolver usando a formula de Bhaskara..." << endl;
             calcularBhaskara(a, b, c, x);
         }
     } else if (escolha == 3) {
@@ -62,16 +62,13 @@ int main() {
 
         resultado = calcularLimiteExponencial(a, x);
     } else {
-        cout << "Escolha inválida." << endl;
+        cout << "Escolha invalida." << endl;
         return 1;
     }
 
     if (std::isnan(resultado) || std::isinf(resultado)) {
-        cout << "O limite resulta em uma indeterminação." << endl;
+        cout << "O limite resulta em uma indeterminacao." << endl;
     } else {
         cout << "Resultado do limite: " << resultado << endl;
     }
-}
-
-    return 0;
 }
