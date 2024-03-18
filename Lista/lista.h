@@ -75,6 +75,7 @@ Lista *remover(int valor, Lista *lista){
         if(valor == p ->dado){
             break;
         }
+    }
 
         if(!p) return lista;
 
@@ -93,5 +94,5 @@ Lista *remover(int valor, Lista *lista){
         pR->prox = p->prox;
         free(p);
         return lista;
-    }
+    
 }
