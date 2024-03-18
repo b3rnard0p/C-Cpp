@@ -65,3 +65,33 @@ Lista *inserir(int valor, Lista *lista) {
     novo->prox = p;
     return lista;
 }
+
+Lista *remover(int valor, Lista *lista){
+    if(!lista) return lista;
+
+    Lista *pR, *p;
+
+    for(pR = NULL, p = lista; p; pR = p, p = p->prox){
+        if(valor == p ->dado){
+            break;
+        }
+
+        if(!p) return lista;
+
+        if(p == lista){
+           lista = lista->prox;
+           free(p);
+           return lista;
+        }
+
+        if(!p->prox){
+           pR->prox = NULL;
+           free(p);
+           return lista;
+        }
+
+        pR->prox = p->prox;
+        free(p);
+        return lista;
+    }
+}
