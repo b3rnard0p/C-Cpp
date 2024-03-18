@@ -17,5 +17,13 @@ int main() {
     cout << "Tamanho da lista " << contar(lista) << endl;
     exibir(lista);
 
+       int valor;
+    cout << "Digite um numero para remover:";
+    cin>> valor;
+
+    lista =  remover(valor, lista);
+    cout << "Tamanho da lista apos remoção" << contar(lista) << endl;
+    exibir(lista);
+
     return 1;
 }
