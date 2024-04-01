@@ -3,25 +3,15 @@ typedef struct no {
     struct no *prox;
 } Lista;
 
-void exibir(Lista *lista){
+void exibir(Lista *lista) {
     Lista *p;
     for (p = lista; p; p = p->prox) {
         cout << p->dado << " ";
     }
 }
 
-int contar(Lista *lista){
-    Lista *p;
-    int qtd = 0;
-    for (p = lista; p; p = p->prox) {
-        qtd++;
-    }
-    return qtd;
-}
-
 bool localizar(int valor, Lista *lista) {
     Lista *p;
-    
     for (p = lista; p; p = p->prox) {
         if (valor == p->dado)
             return true;
@@ -31,13 +21,13 @@ bool localizar(int valor, Lista *lista) {
 
 Lista *inserir(int valor, Lista *lista) {
     Lista *novo;
-    novo = (Lista*)malloc(sizeof(Lista));
+    novo = (Lista *)malloc(sizeof(Lista));
 
     novo->dado = valor;
     novo->prox = NULL;
 
     Lista *p, *pR;
-    for (pR = NULL, p = lista; p ; pR = p, p = p->prox) {
+    for (pR = NULL, p = lista; p; pR = p, p = p->prox) {
         if (valor == p->dado) {
             free(novo);
             return lista;
@@ -59,7 +49,7 @@ Lista *inserir(int valor, Lista *lista) {
     return lista;
 }
 
-void localizarComunsEUnicos(vector<Lista*> &listas, vector<int> &numerosComuns, vector<int> &numerosUnicos) {
+void localizarComunsEUnicos(vector<Lista *> &listas, vector<int> &numerosComuns, vector<int> &numerosUnicos) {
     vector<int> contador(101, 0); // Contador para armazenar a contagem de cada número
 
     // Percorrer todas as listas e contar quantas vezes cada número aparece
@@ -81,4 +71,12 @@ void localizarComunsEUnicos(vector<Lista*> &listas, vector<int> &numerosComuns, 
             numerosUnicos.push_back(i);
         }
     }
+}
+
+Lista *criarLista(int tamanho) {
+    Lista *lista = NULL;
+    for (int i = 0; i < tamanho; ++i) {
+        lista = inserir(rand() % 100 + 1, lista);
+    }
+    return lista;
 }
