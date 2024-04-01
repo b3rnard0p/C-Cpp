@@ -8,23 +8,20 @@ using namespace std;
 #include"Util.h"
 
 int main() {
-    int N = 10; 
-    int M = 5;  
+    int numListas, tamanhoLista;
+    cout << "Quantas listas deseja criar? ";
+    cin >> numListas;
+    cout << "Qual o tamanho de cada lista? ";
+    cin >> tamanhoLista;
 
-    vector<Lista*> listas(N); 
-
+    vector<Lista *> listas;
     srand(time(NULL));
 
-
-    for (int i = 0; i < N; ++i) {
-        Lista* lista = NULL;
-        for (int j = 0; j < M; ++j) {
-            lista = inserir(rand() % 100 + 1, lista);
-        }
-        listas[i] = lista;
+    for (int i = 0; i < numListas; ++i) {
+        listas.push_back(criarLista(tamanhoLista));
     }
 
-    for (int i = 0; i < N; ++i) {
+    for (int i = 0; i < numListas; ++i) {
         cout << "Lista " << i + 1 << ": ";
         exibir(listas[i]);
         cout << endl;
